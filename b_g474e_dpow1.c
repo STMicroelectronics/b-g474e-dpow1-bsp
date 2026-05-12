@@ -27,7 +27,7 @@
 
 #if (USE_BSP_COM_FEATURE > 0)
   #if (USE_COM_LOG > 0)
-    #ifndef __GNUC__
+    #if !defined(__GNUC__) || defined(__CC_ARM) || defined(__ARMCC_VERSION)
       #include <stdio.h>
     #endif
   #endif
